@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flag Memory Match</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="page-header">
+      <h1>Flag Memory Match</h1>
+      <p>
+        Challenge a friend to uncover pairs of international flags. Flip two cards
+        on your turn, and keep the pair if they match. The player who collects the
+        most matches wins!
+      </p>
+    </header>
+
+    <main class="layout">
+      <section class="scoreboard" aria-label="Player statistics">
+        <article class="player-card" data-player-index="0">
+          <h2>Player 1</h2>
+          <dl>
+            <div>
+              <dt>Matches</dt>
+              <dd id="player-0-matches">0</dd>
+            </div>
+            <div>
+              <dt>Attempts</dt>
+              <dd id="player-0-attempts">0</dd>
+            </div>
+            <div>
+              <dt>Accuracy</dt>
+              <dd id="player-0-accuracy">0%</dd>
+            </div>
+            <div>
+              <dt>Current streak</dt>
+              <dd id="player-0-streak">0</dd>
+            </div>
+            <div>
+              <dt>Best streak</dt>
+              <dd id="player-0-best-streak">0</dd>
+            </div>
+          </dl>
+        </article>
+
+        <article class="player-card" data-player-index="1">
+          <h2>Player 2</h2>
+          <dl>
+            <div>
+              <dt>Matches</dt>
+              <dd id="player-1-matches">0</dd>
+            </div>
+            <div>
+              <dt>Attempts</dt>
+              <dd id="player-1-attempts">0</dd>
+            </div>
+            <div>
+              <dt>Accuracy</dt>
+              <dd id="player-1-accuracy">0%</dd>
+            </div>
+            <div>
+              <dt>Current streak</dt>
+              <dd id="player-1-streak">0</dd>
+            </div>
+            <div>
+              <dt>Best streak</dt>
+              <dd id="player-1-best-streak">0</dd>
+            </div>
+          </dl>
+        </article>
+      </section>
+
+      <section class="game-panel">
+        <div class="game-meta">
+          <div class="meta-line">
+            <span class="meta-label">Current player:</span>
+            <span id="current-player" class="meta-value">Player 1</span>
+          </div>
+          <div class="meta-line">
+            <span class="meta-label">Turns taken:</span>
+            <span id="total-turns" class="meta-value">0</span>
+          </div>
+          <div class="meta-line">
+            <span class="meta-label">Pairs found:</span>
+            <span id="total-matches" class="meta-value">0 / 6</span>
+          </div>
+          <button id="reset-button" type="button" class="reset-button">
+            Restart game
+          </button>
+        </div>
+
+        <div
+          class="game-board"
+          id="game-board"
+          role="grid"
+          aria-label="Memory card grid"
+        ></div>
+
+        <p class="end-message" id="end-message" role="status" aria-live="polite"></p>
+
+        <section class="log" aria-live="polite">
+          <h2>Turn log</h2>
+          <ol id="game-log" class="game-log"></ol>
+        </section>
+      </section>
+    </main>
+
+    <footer class="page-footer">
+      <small>
+        Flags provided by <a href="https://flagcdn.com/" target="_blank" rel="noopener">FlagCDN</a>.
+      </small>
+    </footer>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>
